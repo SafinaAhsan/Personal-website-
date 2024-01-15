@@ -1,44 +1,51 @@
-interface IData{
-    title:string,
-    description:string,
-    current:boolean
+import videoFirst from "@/assets/video.mp4"
+import videoSecond from "@/assets/video1.mp4"
+import videoThird from "@/assets/video2.mp4"
+
+interface IData {
+    title: string,
+    video?: string,
+    description: string,
 
 }
-const data:IData[]=[
-{
-    title:"STUDENT AT PIAIC-QUARTER 2",
-    description:"Design and implement machine learning models to analyze large datasets and drive business decisions. Collaborate with cross-functional teams to develop and launch new products and features. Provide technical guidance and mentorship to junior data scientists. Conduct regular presentations to stakeholders on the findings and insights generated from data analysis.",
-    current:true
-},{
+const data: IData[] = [
+    {
 
-    title:"STUDENT AT PIAIC-QUARTER 2",
-    description:"Design and implement machine learning models to analyze large datasets and drive business decisions. Collaborate with cross-functional teams to develop and launch new products and features. Provide technical guidance and mentorship to junior data scientists. Conduct regular presentations to stakeholders on the findings and insights generated from data analysis.",
-    current:false
-},{
+        title: "todo app",
+        video:videoSecond, 
+        description: "I developed a to-do application that incorporates Next.js, TypeScript, and Tailwind CSS. The application includes functionalities such as adding tasks, deleting them, and marking tasks as completed.",
+    
+    },
+    { 
+        title: "Clone Of Panaverse Dao Webpage",
+    video: videoFirst,
+        description:"I created a replica of Panaverse DAO by utilizing Tailwind CSS and implementing it within a Next.js framework with TypeScript.",
+    },
+    {
 
-    title:"STUDENT AT PIAIC-QUARTER 2",
-    description:"Design and implement machine learning models to analyze large datasets and drive business decisions. Collaborate with cross-functional teams to develop and launch new products and features. Provide technical guidance and mentorship to junior data scientists. Conduct regular presentations to stakeholders on the findings and insights generated from data analysis.",
-    current:false
-}]
+        title: "blog webpage",
+        description: "I designed a blog page exclusively using Tailwind CSS.",
+        video:videoThird
+      
+   }]
 
 const ProfessionalExp = () => {
-  return (
-    <div>
-        <h1 className={`mt-10 text-3xl font-medium px-6 sm:px-10 `}>PROFESSIONAL EXPERIENCE</h1>
-        <div className="mt-6 px-6 sm:px-10  ">
-        {data.map((item)=>{
-            return <div 
-            key={item.title}
-            className="border border-transparent drop-shadow-md  bg-gray-100 rounded-lg mt-6 px-2">
-            <div className={` ${item.current ? "bg-pink-900 h-2 " :"bg-gray-200 h-2"}`} >         </div>
-                <h4 className="font-medium m-4">{item.title}</h4>
-                <h6 className="m-4 font-medium">{item.description}</h6>
+    return (
+        <div>
+            <h1 className={`mt-10 text-3xl font-medium px-6 sm:px-10 `}>PROJECTS</h1>
+            <div className="mt-6 px-6 sm:px-10  ">
+                {data.map((item) => {
+                    return <div
+                        key={item.title}
+                        className="border border-transparent drop-shadow-md  bg-gray-100 rounded-lg mt-6 px-2">
+                          <h1 className="font-semibold text-xl m-4 uppercase">{item.title}</h1>
+                     {item.video && (<video src={item.video} autoPlay muted loop controls className="w-full "></video>)}
+                        <h6 className="m-4  text-md">{item.description}</h6>
+                    </div>
+                })}
             </div>
-   
-        })}
         </div>
-    </div>
-  )
+    )
 }
 
 export default ProfessionalExp
