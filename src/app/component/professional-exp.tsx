@@ -27,7 +27,9 @@ const ProfessionalExp = () => {
         <h1 className={`mt-10 text-3xl font-medium px-6 sm:px-10 `}>PROFESSIONAL EXPERIENCE</h1>
         <div className="mt-6 px-6 sm:px-10  ">
         {data.map((item)=>{
-            return <div className="border border-transparent drop-shadow-md  bg-gray-100 rounded-lg mt-6 px-2">
+            return <div 
+            key={item.title}
+            className="border border-transparent drop-shadow-md  bg-gray-100 rounded-lg mt-6 px-2">
             <div className={` ${item.current ? "bg-pink-900 h-2 " :"bg-gray-200 h-2"}`} >         </div>
                 <h4 className="font-medium m-4">{item.title}</h4>
                 <h6 className="m-4 font-medium">{item.description}</h6>
