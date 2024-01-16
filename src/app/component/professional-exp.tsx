@@ -1,6 +1,6 @@
-import videoFirst from "@/assets/video.mp4"
-import videoSecond from "@/assets/video1.mp4"
-import videoThird from "@/assets/video2.mp4"
+import videoFirst from "../../../public/video.mp4"
+import videoSecond from "../../../public/video1.mp4"
+import videoThird from "../../../public/video2.mp4"
 
 interface IData {
     title: string,
